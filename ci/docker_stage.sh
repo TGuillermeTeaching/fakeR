@@ -9,10 +9,10 @@ set -e
 dir_script=$(dirname $(readlink -f "$0"))
 dir_root=$dir_script/../
 dir_package=$(basename $(dirname $dir_script))
-image_name=index.docker.io/jozefhajnala/rhub:latest
+image_name=index.docker.io/tguillerme/rhub:latest
 container_name=${dir_package}_check
 
-docker login --username jozefhajnala --password $DOCKER_LOGIN_TOKEN
+docker login --username tguillerme --password $DOCKER_LOGIN_TOKEN
 docker pull $image_name
 
 docker run -id --name $container_name $image_name bash
